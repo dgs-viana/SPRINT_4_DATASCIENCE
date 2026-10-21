@@ -1,0 +1,197 @@
+{
+  "origem_base": "Transcrições anonimizadas oficiais do Challenge TOTVS/FIAP (Sprint 3)",
+  "politica_acesso": "Não publicar o arquivo bruto em repositório público sem autorização.",
+  "metodologia": "Modelos por TF-IDF com termos de rotulagem mascarados tanto no treino quanto na inferência. Validação CV 3 folds com agrupamento por reunião. Rótulos fracos e IA revisada não são avaliação humana.",
+  "estatisticas": {
+    "linhas_base_bruta": 1174,
+    "reunioes_unicas_transcricao": 986,
+    "trechos_com_20_a_400_palavras": 60860,
+    "reunioes_com_trechos": 933,
+    "trechos_avaliacao_revisada_ia": 119,
+    "reunioes_avaliacao_revisada_ia": 111
+  },
+  "tarefas": {
+    "oportunidade": {
+      "tarefa": "oportunidade",
+      "origem": "TOTVS ANON_transcricao.json + rótulos fracos da Sprint 3",
+      "trechos_treino": 422,
+      "reunioes_treino": 73,
+      "ids_sobrepostos_na_validacao": 0,
+      "distribuicao_treino": {
+        "positivos": 211,
+        "negativos": 211
+      },
+      "modelo_final": "Regressão Logística",
+      "criterio_escolha": "F1 na validação cruzada por reunião (equilíbrio entre precisão e recall)",
+      "comparacao_cv": [
+        {
+          "modelo": "Regressão Logística",
+          "accuracy": 0.7962,
+          "precision": 0.766,
+          "recall": 0.8531,
+          "f1": 0.8072,
+          "matriz_confusao": [
+            [
+              156,
+              55
+            ],
+            [
+              31,
+              180
+            ]
+          ],
+          "suporte_positivo": 211,
+          "suporte_negativo": 211
+        },
+        {
+          "modelo": "Naive Bayes",
+          "accuracy": 0.6588,
+          "precision": 0.5994,
+          "recall": 0.9573,
+          "f1": 0.7372,
+          "matriz_confusao": [
+            [
+              76,
+              135
+            ],
+            [
+              9,
+              202
+            ]
+          ],
+          "suporte_positivo": 211,
+          "suporte_negativo": 211
+        },
+        {
+          "modelo": "LinearSVC calibrado",
+          "accuracy": 0.7867,
+          "precision": 0.7619,
+          "recall": 0.8341,
+          "f1": 0.7964,
+          "matriz_confusao": [
+            [
+              156,
+              55
+            ],
+            [
+              35,
+              176
+            ]
+          ],
+          "suporte_positivo": 211,
+          "suporte_negativo": 211
+        }
+      ],
+      "validacao_revisada_ia": {
+        "accuracy": 0.7395,
+        "precision": 0.5778,
+        "recall": 0.6842,
+        "f1": 0.6265,
+        "matriz_confusao": [
+          [
+            62,
+            19
+          ],
+          [
+            12,
+            26
+          ]
+        ],
+        "suporte_positivo": 38,
+        "suporte_negativo": 81
+      },
+      "limite_interpretacao": "Os rótulos do treino são derivados de regras e metadados; rótulos de avaliação foram revisados por IA e não constituem verdade-terreno humana."
+    },
+    "risco": {
+      "tarefa": "risco",
+      "origem": "TOTVS ANON_transcricao.json + rótulos fracos da Sprint 3",
+      "trechos_treino": 284,
+      "reunioes_treino": 122,
+      "ids_sobrepostos_na_validacao": 0,
+      "distribuicao_treino": {
+        "positivos": 142,
+        "negativos": 142
+      },
+      "modelo_final": "Regressão Logística",
+      "criterio_escolha": "Precisão mínima de 0,65 na CV por reunião; entre F2 próximos (0,02), prioridade à Regressão Logística interpretável da Sprint 3",
+      "comparacao_cv": [
+        {
+          "modelo": "Regressão Logística",
+          "accuracy": 0.6972,
+          "precision": 0.6918,
+          "recall": 0.7113,
+          "f1": 0.7014,
+          "matriz_confusao": [
+            [
+              97,
+              45
+            ],
+            [
+              41,
+              101
+            ]
+          ],
+          "suporte_positivo": 142,
+          "suporte_negativo": 142
+        },
+        {
+          "modelo": "Naive Bayes",
+          "accuracy": 0.6725,
+          "precision": 0.6207,
+          "recall": 0.8873,
+          "f1": 0.7304,
+          "matriz_confusao": [
+            [
+              65,
+              77
+            ],
+            [
+              16,
+              126
+            ]
+          ],
+          "suporte_positivo": 142,
+          "suporte_negativo": 142
+        },
+        {
+          "modelo": "LinearSVC calibrado",
+          "accuracy": 0.7007,
+          "precision": 0.6939,
+          "recall": 0.7183,
+          "f1": 0.7059,
+          "matriz_confusao": [
+            [
+              97,
+              45
+            ],
+            [
+              40,
+              102
+            ]
+          ],
+          "suporte_positivo": 142,
+          "suporte_negativo": 142
+        }
+      ],
+      "validacao_revisada_ia": {
+        "accuracy": 0.6218,
+        "precision": 0.2364,
+        "recall": 0.8125,
+        "f1": 0.3662,
+        "matriz_confusao": [
+          [
+            61,
+            42
+          ],
+          [
+            3,
+            13
+          ]
+        ],
+        "suporte_positivo": 16,
+        "suporte_negativo": 103
+      },
+      "limite_interpretacao": "Os rótulos do treino são derivados de regras e metadados; rótulos de avaliação foram revisados por IA e não constituem verdade-terreno humana."
+    }
+  }
+}

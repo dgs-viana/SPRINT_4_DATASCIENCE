@@ -1,0 +1,5 @@
+[LOCUTOR 1]: Bom dia, vamos revisar a operação com o Protheus e o Meu RH.
+[LOCUTOR 2]: Estamos com diversos erros e o suporte demora dias para responder. A diretoria está considerando trocar de fornecedor.
+[LOCUTOR 1]: Entendi, vamos tratar esses problemas como prioridade.
+[LOCUTOR 2]: Também abriremos duas filiais e gostaríamos de receber uma cotação para contratar mais licenças.
+[LOCUTOR 1]: Vou encaminhar o assunto ao executivo de contas e ao time de suporte.
