@@ -22,10 +22,44 @@ st.markdown('''<style>
 [data-testid="stTabs"] button{font-weight:700}div[data-testid="stAlert"]{border-radius:10px}
 footer{visibility:hidden}
 
-/* CONTRASTE: navegação */
-[data-testid="stTabs"] button[role="tab"] {color:#40546a!important;font-weight:700!important;opacity:1!important}
-[data-testid="stTabs"] button[role="tab"] * {color:inherit!important;opacity:1!important}
-[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {color:#dc3545!important}
+
+/* ABAS DO STREAMLIT - CORRECAO DEFINITIVA */
+
+[data-testid="stTabs"] button[role="tab"] {
+    background-color: transparent !important;
+    color: #19344d !important;
+    -webkit-text-fill-color: #19344d !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Texto e elementos internos das abas */
+[data-testid="stTabs"] button[role="tab"] *,
+[data-testid="stTabs"] button[role="tab"] p,
+[data-testid="stTabs"] button[role="tab"] span {
+    color: #19344d !important;
+    -webkit-text-fill-color: #19344d !important;
+    opacity: 1 !important;
+}
+
+/* Aba selecionada */
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"],
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] * {
+    color: #e63946 !important;
+    -webkit-text-fill-color: #e63946 !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+
+/* Efeito ao passar o mouse */
+[data-testid="stTabs"] button[role="tab"]:hover {
+    background-color: #e8edf3 !important;
+}
+
+/* Mantem o destaque vermelho */
+[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+    background-color: #e63946 !important;
+}
 
 /* Botões */
 div.stButton>button,div.stDownloadButton>button {background:#112942!important;color:white!important;border:1px solid #112942!important;border-radius:10px!important}
